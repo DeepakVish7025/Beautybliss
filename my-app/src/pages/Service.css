@@ -1,0 +1,42 @@
+.category-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; justify-content: center; }
+.filter-btn {
+  padding: 9px 22px; border: 1.5px solid #e8d9cc;
+  border-radius: 50px; background: white; color: var(--text-light);
+  font-size: 0.88rem; cursor: pointer; transition: all 0.25s;
+  font-family: var(--font-body);
+}
+.filter-btn:hover { border-color: var(--rose); color: var(--rose); }
+.filter-btn.active { background: var(--rose); border-color: var(--rose); color: white; }
+
+.service-item { position: relative; }
+.si-image { position: relative; aspect-ratio: 16/10; overflow: hidden; }
+.si-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.service-item:hover .si-image img { transform: scale(1.06); }
+.si-placeholder { aspect-ratio: 16/10; background: linear-gradient(135deg, var(--blush), #f0ddd0); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+.si-overlay {
+  position: absolute; inset: 0; background: rgba(26,18,8,0.65);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s;
+}
+.service-item:hover .si-overlay { opacity: 1; }
+.si-cat { position: absolute; top: 12px; right: 12px; }
+
+.si-body { padding: 20px 22px 22px; }
+.si-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.si-header h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--dark); flex: 1; }
+.si-price { font-size: 1.3rem; font-weight: 600; color: var(--rose-dark); font-family: var(--font-display); white-space: nowrap; }
+.si-body p { font-size: 0.87rem; color: var(--text-light); line-height: 1.65; margin-bottom: 16px; }
+.si-footer { display: flex; justify-content: space-between; align-items: center; }
+.si-duration { font-size: 0.82rem; color: var(--text-light); }
+.si-book-link { font-size: 0.88rem; color: var(--rose); font-weight: 500; transition: color 0.2s; }
+.si-book-link:hover { color: var(--rose-dark); }
+
+.empty-state { text-align: center; padding: 80px 24px; color: var(--text-light); font-size: 1.1rem; }
+
+.services-cta { margin-top: 64px; }
+.services-cta-inner {
+  background: linear-gradient(135deg, var(--dark), var(--dark-2));
+  border-radius: 20px; padding: 48px; text-align: center;
+}
+.services-cta-inner h3 { font-family: var(--font-display); color: white; font-size: 1.8rem; margin-bottom: 10px; font-weight: 400; }
+.services-cta-inner p { color: rgba(255,255,255,0.6); margin-bottom: 24px; }

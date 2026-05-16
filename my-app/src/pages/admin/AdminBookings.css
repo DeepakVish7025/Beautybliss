@@ -1,0 +1,78 @@
+/* Booking Stats Pills */
+.booking-stats-row {
+  display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+}
+.booking-stat-pill {
+  background: white; border-radius: 12px; padding: 14px 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06); cursor: pointer;
+  transition: all 0.2s; border: 2px solid transparent; min-width: 80px;
+  flex: 1;
+}
+.booking-stat-pill:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.booking-stat-pill.active-pill { border-color: var(--pill-color, var(--rose)); background: rgba(var(--pill-color, 200), 0.06); }
+.booking-stat-pill strong { font-size: 1.6rem; font-family: var(--font-display); line-height: 1; }
+.booking-stat-pill span { font-size: 0.72rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.07em; }
+
+/* Filters bar */
+.booking-filters {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px; gap: 12px; flex-wrap: wrap;
+  background: white; border-radius: 12px; padding: 14px 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Bookings layout with detail panel */
+.bookings-layout { display: grid; grid-template-columns: 1fr; gap: 20px; transition: all 0.3s; }
+.bookings-layout.with-panel { grid-template-columns: 1fr 340px; }
+
+/* Customer cell */
+.customer-cell { display: flex; align-items: center; gap: 10px; }
+.customer-avatar {
+  width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-weight: 600; font-size: 0.85rem;
+}
+.customer-cell strong { display: block; font-size: 0.88rem; color: var(--dark); }
+.customer-cell small { display: block; font-size: 0.78rem; color: var(--text-light); }
+.admin-table td div strong { display: block; font-size: 0.88rem; }
+.admin-table td div small { display: block; font-size: 0.78rem; color: var(--text-light); margin-top: 1px; }
+.selected-row td { background: rgba(200,149,108,0.06) !important; }
+
+/* Detail Panel */
+.booking-detail-panel {
+  background: white; border-radius: 16px; padding: 24px;
+  box-shadow: var(--shadow); position: sticky; top: 80px;
+  max-height: calc(100vh - 100px); overflow-y: auto;
+  border: 1.5px solid rgba(200,149,108,0.15);
+}
+.bdp-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+}
+.bdp-header h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--dark); font-weight: 500; }
+.bdp-status-badge { text-align: center; margin-bottom: 20px; }
+.bdp-section { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #f0ebe5; }
+.bdp-section:last-of-type { border-bottom: none; }
+.bdp-section h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: 12px; font-weight: 600; }
+.bdp-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 12px; }
+.bdp-row span { font-size: 0.82rem; color: var(--text-light); flex-shrink: 0; }
+.bdp-row strong { font-size: 0.88rem; color: var(--dark); text-align: right; }
+.bdp-message { font-size: 0.85rem; color: var(--text); background: var(--blush); border-radius: 8px; padding: 12px; line-height: 1.6; }
+
+.bdp-status-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.status-update-btn {
+  padding: 9px 10px; border: 1.5px solid #e8d9cc; border-radius: 8px;
+  background: white; font-size: 0.8rem; font-family: var(--font-body);
+  cursor: pointer; transition: all 0.2s; color: var(--text);
+}
+.status-update-btn:hover { border-color: var(--rose); color: var(--rose); }
+.status-update-btn.active[data-status="pending"] { background: rgba(251,188,5,0.12); border-color: #d97706; color: #92400e; }
+.status-update-btn.active[data-status="confirmed"] { background: rgba(52,168,83,0.12); border-color: #16a34a; color: #14532d; }
+.status-update-btn.active[data-status="completed"] { background: rgba(200,149,108,0.15); border-color: var(--rose); color: var(--rose-dark); }
+.status-update-btn.active[data-status="cancelled"] { background: rgba(220,53,69,0.1); border-color: #dc2626; color: #991b1b; }
+
+.bdp-actions { display: flex; gap: 10px; margin-top: 4px; }
+
+@media (max-width: 1100px) { .bookings-layout.with-panel { grid-template-columns: 1fr; } }

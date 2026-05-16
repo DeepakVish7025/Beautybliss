@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Service = require('../models/Service');
-const { protect } = require('../middleware/authMiddleware');
-const upload = require('../middleware/uploadMiddleware');
+const { protect } = require('../middleware/Authmiddleware');
+const upload = require('../middleware/Uploadmiddleware');
 
 // Public: GET all active services
 router.get('/', async (req, res) => {

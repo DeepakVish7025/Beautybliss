@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Gallery = require('../models/Gallery');
-const { protect } = require('../middleware/authMiddleware');
-const upload = require('../middleware/uploadMiddleware');
+const { protect } = require('../middleware/Authmiddleware');
+const upload = require('../middleware/Uploadmiddleware');
 
 // Public: GET all active gallery items
 router.get('/', async (req, res) => {

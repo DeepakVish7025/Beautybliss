@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Booking = require('../models/Booking');
-const { protect } = require('../middleware/authMiddleware');
+const { protect } = require('../middleware/Authmiddleware');
 const { notifyStatusUpdate, sendEmailNotification, sendSMSNotification } = require('../utils/notifications');
 
 // Public: POST create booking
